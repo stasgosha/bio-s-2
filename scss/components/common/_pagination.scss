@@ -1,0 +1,109 @@
+.pagination-wrapper{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 30px;
+
+	@media screen and (max-width: 575px){
+		justify-content: space-between;
+	}
+
+	.pagination{
+		display: flex;
+		justify-content: center;
+
+		li{
+			color: $text-dark;
+
+			@media screen and (max-width: 575px){
+				margin-right: 6px;
+			}
+
+			&:last-child{
+				margin-right: 0;
+			}
+
+			a{
+				font-size: 14px;
+				line-height: 1;
+				font-weight: 600;
+				text-align: center;
+				color: inherit;
+				transition: all $t;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				width: 42px;
+				height: 42px;
+				border-radius: 50%;
+				border: 1px solid transparent;
+
+				&:hover,
+				&:focus{
+					color: $primary;
+				}
+
+				@media screen and (max-width: 575px){
+					width: 36px;
+					height: 36px;
+				}
+			}
+
+			&.current{
+				a{
+					cursor: default;
+					pointer-events: none;
+					background: #F3F6F9;
+					border-color: $primary;
+				}
+			}
+		}
+	}
+
+	.prevnext{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 42px;
+		height: 42px;
+		border-radius: 50%;
+		border: 0;
+		background: #fff;
+		box-shadow: $shadow;
+
+		@media screen and (max-width: 575px){
+			width: 36px;
+			height: 36px;
+		}
+
+		svg{
+			width: 8px;
+			height: 12px;
+			display: block;
+			fill: $primary;
+			transition: all $t;
+		}
+
+		&:hover{
+			background: $gray;
+		}
+
+		&.prev{
+			margin-right: 14px;
+		}
+
+		&.next{
+			margin-left: 14px;
+		}
+
+		@media screen and (max-width: 575px){
+			&.prev{
+				margin-right: 6px;
+			}
+
+			&.next{
+				margin-left: 6px;
+			}
+		}
+	}
+}

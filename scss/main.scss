@@ -1,0 +1,43 @@
+@import "components/fonts";
+@import "components/vars";
+@import "components/assist";
+@import "components/layout";
+@import "components/typography";
+@import "icons";
+
+// Header
+@import "components/header/header";
+@import "components/header/mobile-top-nav";
+
+// Footer
+@import "components/footer/footer";
+
+// Common
+@import "components/common/buttons";
+@import "components/common/forms";
+@import "components/common/sliders";
+@import "components/common/modals";
+@import "components/common/menu-opener";
+@import "components/common/tabs-nav";
+// @import "components/common/video-block";
+// @import "components/common/panel";
+// @import "components/common/pagination";
+// @import "components/common/tables";
+
+// Sections
+@import "components/sections/first-screen-section";
+@import "components/sections/solutions-section";
+@import "components/sections/advantages-section";
+@import "components/sections/find-section";
+@import "components/sections/products-section";
+@import "components/sections/help-section";
+@import "components/sections/scheme-section";
+@import "components/sections/consultation-section";
+@import "components/sections/fit-section";
+@import "components/sections/select-water-section";
+@import "components/sections/why-we-section";
+@import "components/sections/gallery-section";
+@import "components/sections/features-section";
+@import "components/sections/how-we-work-section";
+@import "components/sections/contacts-section";
+@import "components/sections/about-section";

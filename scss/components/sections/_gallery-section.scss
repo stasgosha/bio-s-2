@@ -1,0 +1,149 @@
+.gallery-section{
+	padding: 75px 0 35px;
+	background: linear-gradient(to bottom, #f8f9f3, #F9F4D7 100%);
+
+	.tabs-nav{
+		margin-bottom: 25px;
+	}
+
+	.section-footer{
+		margin-top: 40px;
+		display: flex;
+		justify-content: center;
+
+		.btn{
+			min-width: 220px;
+		}
+	}
+
+	@media screen and (max-width: 767px){
+		padding-top: 30px;
+
+		.section-caption{
+			margin-bottom: 25px;
+		}
+	}
+}
+
+.gallery-grid{
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-gap: 30px;
+
+	@media screen and (max-width: 991px){
+		grid-gap: 20px;
+	}
+
+	@media screen and (max-width: 575px){
+		grid-gap: 30px;
+		grid-template-columns: 100%;
+	}
+}
+
+.gallery-card{
+	display: flex;
+	flex-direction: column;
+
+	.card-image{
+		position: relative;
+		display: block;
+		border-radius: $r;
+		overflow: hidden;
+		box-shadow: 0px 8px 20px rgba(91, 72, 44, 0.2);
+		
+		&:before{
+			content: '';
+			display: block;
+			padding-top: 53.968%;
+		}
+		
+		img{
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			left: 0;
+			top: 0;
+			display: block;
+			object-fit: cover;
+			object-position: center center;
+			border-radius: $r;
+			transition: all .5s;
+		}
+
+		&:hover,
+		&:focus{
+			img{
+				transform: scale(1.05);
+			}
+		}
+	}
+
+	.additional-images{
+		display: none;
+	}
+
+	.card-caption{
+		font-size: 16px;
+		line-height: 1.3;
+		font-weight: 500;
+		color: $text-color;
+		margin-top: 10px;
+
+		&:before{
+			content: '';
+			display: inline-block;
+			margin-right: 5px;
+			width: 10px;
+			height: 10px;
+			flex: none;
+			background: url("data:image/svg+xml,%3Csvg fill='none' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cpath d='M9.75 5.6L5.6 9.74a.84.84 0 01-1.18-1.19L7.97 5 4.41 1.43A.84.84 0 015.59.25L9.75 4.4c.33.32.33.86 0 1.18zm-5 .25l-3.3 3.48a.82.82 0 01-1.2 0 .93.93 0 010-1.27l2.7-2.85-2.7-2.85a.93.93 0 010-1.26.82.82 0 011.2 0l3.3 3.48c.33.35.33.92 0 1.27z' fill='%239CC155'/%3E%3C/svg%3E") no-repeat center center / contain;
+		}
+	}
+}
+
+.tabs-select-wrapper{
+	position: relative;
+	width: 260px;
+	margin: 0 auto 25px;
+
+	select{
+		width: 100%;
+		height: 48px;
+		border-radius: 24px;
+		background: linear-gradient(0deg, #D9E7EA 0%, #F3F7F8 94.64%, rgba(255, 255, 255, 0) 100%);
+		box-shadow: inset 0px -3px 4px rgba(255, 255, 255, 0.52);
+		filter: drop-shadow(0px 2px 3px rgba(63, 63, 63, 0.35));
+		padding: 0 60px 0 35px;
+		font-weight: 500;
+		font-size: 14px;
+		line-height: 16px;
+		color: #5F6D88;
+		appearance: none;
+		border: 0;
+		outline: none !important;
+		text-transform: uppercase;
+	}
+
+	.opener{
+		fill: #657492;
+		width: 10px;
+		height: 10px;
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		right: 20px;
+	}
+
+	@media screen and (max-width: 575px){
+		width: 220px;
+
+		select{
+			font-size: 11px;
+		}
+
+		.opener{
+			width: 8px;
+			height: 8px;
+		}
+	}
+}

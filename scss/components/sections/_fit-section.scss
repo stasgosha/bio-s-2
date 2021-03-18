@@ -1,0 +1,156 @@
+.fit-section{
+	padding: 65px 0 135px;
+	background: #f8f9f3;
+	position: relative;
+
+	.section-caption{
+		margin-bottom: 55px;
+	}
+
+	@media screen and (max-width: 767px){
+		padding-bottom: 30px;
+	}
+
+	@media screen and (max-width: 575px){
+		.section-caption{
+			margin-bottom: 30px;
+		}
+	}
+}
+
+@media screen and (min-width: 992px){
+	.fit-list{
+		.item{
+			&:nth-child(even){
+				transform: translateY(60px);
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 991px){
+	.fit-list-wrapper{
+		.fit-list{
+			display: block;
+
+			width: calc(100% + 7px * 2);
+			margin: -15px -7px;
+			
+			.item{
+				padding: 15px 7px;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 575px){
+	.fit-list-wrapper{
+		.fit-list{
+			width: calc(100% + 7px * 2 + 310px);
+			margin: -15px -162px;
+			
+			.item{
+				padding: 15px 7px;
+			}
+		}
+	}
+}
+
+.fit-card{
+	padding: 50px 50px 60px;
+	border-radius: $r;
+	box-shadow: 0px 8px 20px rgba(91, 72, 44, 0.2);
+	background: #fff;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	height: 100%;
+
+	&:after{
+		content: '';
+		display: block;
+		width: calc(100% - 20px);
+		height: calc(100% - 20px);
+		border-radius: 3px;
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+		border: 1px solid #F1B32C;
+		pointer-events: none;
+	}
+
+	.card-image{
+		width: 120px;
+		height: 120px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex: none;
+		margin-bottom: 25px;
+		position: relative;
+
+		&:after{
+			content: '';
+			display: block;
+			width: 120px;
+			height: 120px;
+			border-radius: 50%;
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			right: -35px;
+			background: #F7FFC2;
+			opacity: .66;
+		}
+
+		img{
+			display: block;
+			max-width: 100%;
+			height: auto;
+			position: relative;
+			z-index: 2;
+		}
+
+		&.align-end{
+			align-items: flex-end;
+			padding-bottom: 5px;
+		}
+	}
+
+	.card-caption{
+		text-align: center;
+		@include h4;
+		color: $text-dark;
+		padding-bottom: 18px;
+		position: relative;
+
+		&:after{
+			content: '';
+			display: block;
+			width: 30px;
+			height: 3px;
+			border-radius: 2px;
+			background: $primary;
+			position: absolute;
+			left: 50%;
+			transform: translateX(-50%);
+			bottom: 0;
+		}
+	}
+
+	@media screen and (max-width: 1199px){
+		padding-left: 30px;
+		padding-right: 30px;
+	}
+
+	@media screen and (max-width: 991px){
+		box-shadow: 0px 8px 10px rgba(91, 72, 44, 0.2);
+	}
+
+	@media screen and (max-width: 575px){
+		padding-top: 35px;
+		padding-bottom: 40px;
+	}
+}

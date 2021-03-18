@@ -1,0 +1,167 @@
+.footer{
+	background: #fff;
+	position: relative;
+
+	&:after{
+		content: '';
+		display: block;
+		width: 100%;
+		height: 55px;
+		background: url(../img/backgrounds/footer-bg.jpg) no-repeat center center / auto 100%;
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		pointer-events: none;
+	}
+
+	.footer-row{
+		&.first{
+			padding: 50px 0 20px;
+
+			.footer-inner{
+				display: grid;
+				grid-template-columns: 3fr 6fr 3fr;
+				grid-gap: 30px;
+
+				@media screen and (max-width: 1199px){
+					grid-gap: 20px;
+					grid-template-columns: 190px 1fr 220px;
+				}
+
+				@media screen and (max-width: 767px){
+					grid-template-columns: 100%;
+					grid-gap: 25px;
+				}
+			}
+		}
+
+		&.second{
+			padding: 20px 0 80px;
+
+			.footer-inner{
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				width: calc(100% + 15px * 2);
+				margin-left: -15px;
+				margin-right: -15px;
+				
+				.footer-block{
+					padding: 0 15px;
+				}
+			}
+		}
+
+		@media screen and (max-width: 575px){
+			&.first{
+				padding-top: 30px;
+			}
+
+			&.second{
+				padding-top: 0;
+
+				.footer-inner{
+					flex-direction: column;
+					align-items: stretch;
+
+					.footer-block{
+						margin-bottom: 20px;
+
+						&:last-child{
+							margin-bottom: 0;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.copyright{
+		font-size: 14px;
+		line-height: 1.5;
+	}
+}
+
+.footer-contacts{
+	max-width: 220px;
+	margin-right: auto;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+
+	.phone-link{
+		color: $text-color;
+		margin-bottom: 10px;
+		font-size: 16px;
+		line-height: 1.5;
+
+		&:hover,
+		&:focus{
+			color: $primary;
+		}
+	}
+
+	.email-link{
+		color: inherit;
+		margin-bottom: 15px;
+
+		&:hover,
+		&:focus{
+			color: $primary;
+		}
+	}
+
+	.address{
+		font-style: normal;
+		line-height: 1.2;
+	}
+}
+
+.footer-nav{
+	ul{
+		columns: 2;
+		columns-gap: 90px;
+		font-size: 14px;
+		line-height: 20px;
+
+		li{
+			a{
+				color: inherit;
+				display: inline-block;
+				padding: 5px 0;
+
+				&:hover,
+				&:focus{
+					color: #E39D06;
+				}
+			}
+
+			&.current-menu-item,
+			&.current-menu-parent{
+				a{
+					color: #E39D06;
+				}
+			}
+			
+			&.current-menu-item{
+				a{
+					cursor: default;
+				}
+			}
+		}
+
+		@media screen and (max-width: 575px){
+			columns: 1;
+		}
+	}
+}
+
+.webolution{
+	display: block;
+
+	img{
+		height: 27px;
+		width: auto;
+		display: block;
+	}
+}

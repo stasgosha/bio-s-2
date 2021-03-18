@@ -1,0 +1,28 @@
+// Fonts
+$main-font: 'M PLUS 1p', Arial, sans-serif;
+$second-font: 'Merriweather', $main-font;
+$third-font: $main-font;
+
+// Colors
+$green: #9CC155;
+$navy: #0D5667;
+$orange: #F1B32C;
+$blue: #186282;
+
+$gray: #4A4A4A;
+$dark: #3F485A;
+$light: #657492;
+
+$text-color: $gray;
+$text-dark: $dark;
+$text-light: $light;
+
+$primary: $green;
+$accent: $navy;
+
+// Params
+$body-bg: #fff; // site background
+$t: .3s; // animation duration
+$r: 6px; // default border radius
+$shadow: 0px 2px 10px rgba(78, 127, 222, 0.2);; // default card shadow
+$gradient: linear-gradient(to bottom, #deb986, #d9aa6d 100%)

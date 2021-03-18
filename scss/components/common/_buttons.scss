@@ -1,0 +1,105 @@
+.btn{
+	font-weight: 700;
+	text-align: center;
+	font-size: 13px;
+	line-height: 1.3;
+	text-transform: uppercase;
+	padding: 10px 44px;
+	min-height: 56px;
+	border-radius: 28px;
+	font-family: inherit;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	transition: all $t;
+	cursor: pointer;
+	appearance: none;
+	white-space: nowrap;
+	border: 0;
+	color: #fff;
+	background: $primary;
+	box-shadow: 0px 1px 1px #87B72B, inset 0px 0px 4px #BDE07A;
+
+	&:hover,
+	&:focus{
+		background: #709C1B;
+		outline: none;
+	}
+
+	// &:active{
+	// 	transform: translateY(2px);
+	// }
+
+	.btn-icon{
+		width: 10px;
+		height: 10px;
+		flex: none;
+		display: block;
+		fill: currentcolor;
+
+		&:first-child{
+			margin-right: 13px;
+		}
+
+		&:last-child{
+			margin-left: 13px;
+		}
+	}
+
+	&.btn-accent{
+		background: $blue;
+		box-shadow: none;
+
+		&:hover,
+		&:focus{
+			background: #66C8BF;
+		}
+	}
+
+	&.btn-orange{
+		background: $orange;
+		box-shadow: 0px 1px 1px rgba(97, 67, 23, 0.5), inset 0px 0px 4px #F7FFC2;
+
+		&:hover,
+		&:focus{
+			background: #E3900E;
+		}
+	}
+
+	&.btn-light{
+		background: transparent;
+		color: $primary;
+		font-weight: 500;
+		box-shadow: none;
+		border: 2px solid $primary;
+
+		&:hover,
+		&:focus,
+		&.active{
+			box-shadow: 0px 4px 4px rgba(70, 92, 121, 0.2);
+			background: $primary;
+			color: #fff;
+		}
+	}
+
+	&.fullwidth{
+		width: 100%;
+	}
+
+	@media screen and (max-width: 767px){
+		min-height: 48px;
+		border-radius: 24px;
+		padding: 10px 25px;
+		font-size: 12px;
+
+		.btn-icon{
+			&:first-child{
+				margin-right: 9px;
+			}
+
+			&:last-child{
+				margin-left: 9px;
+			}
+		}
+	}
+}

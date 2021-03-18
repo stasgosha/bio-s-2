@@ -1,0 +1,84 @@
+.help-section{
+	background: linear-gradient(269.76deg, #E9F5B3 2.44%, #F9F4D9 99.79%);
+
+	.container{
+		position: relative;
+	}
+
+	.section-content{
+		padding: 87px 0 65px;
+		max-width: 630px;
+
+		.btn{
+			min-width: 220px;
+
+			@media screen and (max-width: 575px){
+				min-width: 190px;
+			}
+		}
+	}
+
+	.section-caption{
+		margin-bottom: 25px;
+
+		.sc-title{
+			@media screen and (min-width: 768px){
+				line-height: 1;
+			}
+
+			@media screen and (min-width: 1200px){
+				font-size: 36px;
+			}
+		}
+
+		.sc-subtitle{
+			margin-top: 9px;
+		}
+	}
+
+	.section-image{
+		position: absolute;
+		right: -160px;
+		bottom: 0;
+		width: 780px;
+
+		img{
+			display: block;
+			max-width: 100%;
+			height: auto;
+		}
+	}
+
+	@media screen and (max-width: 1199px){
+		.section-image{
+			right: -250px;
+		}
+	}
+
+	@media screen and (max-width: 991px){
+		.section-image{
+			width: 720px;
+			right: -310px;
+		}
+
+		.section-content{
+			max-width: 460px;
+		}
+	}
+
+	@media screen and (max-width: 767px){
+		.section-image{
+			width: 500px;
+			right: -200px;
+		}
+
+		.section-content{
+			padding: 50px 0 110px;
+			max-width: 360px;
+		}
+
+		.section-image{
+			width: 400px;
+		}
+	}
+}

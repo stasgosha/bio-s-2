@@ -1,0 +1,152 @@
+// $colors: (
+// 	white: #fff,
+// 	text: $text-color,
+// 	accent: $accent,
+// 	primary: $primary,
+// );
+
+// blue: $blue,
+// orange: $orange,
+// dark: $text-dark
+
+// @each $i in $colors{
+// 	$color-key: nth($i, 1);
+// 	$color-value: nth($i, 2);
+
+// 	&.color-#{$color-key}{
+// 		color: $color-value !important;
+// 	}
+// }
+
+.color-primary{
+	color: $primary;
+}
+
+@mixin addFocusBorder($color: $primary, $size: 8px){
+	position: relative;
+	z-index: 2;
+
+	&:focus{
+		outline: none;
+
+		&:before{
+			content: '';
+			display: block;
+			width: calc(100% + #{$size});
+			height: calc(100% + #{$size});
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%);
+			z-index: -1;
+			border: 2px solid $color;
+		}
+	}
+}
+
+@mixin clipCorner($size: 30px){
+	clip-path: polygon(100% 0, 100% calc(100% - #{$size}), calc(100% - #{$size}) 100%, 0 100%, 0 0);
+}
+
+.push{
+	position: relative;
+}
+
+.flex-center{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.flex-right{
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+}
+
+@media screen and (max-width: 959px){
+	.md-flex-center{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+}
+
+.object-fit-cover{
+	object-fit: cover;
+	object-position: center center;
+	font-family: 'object-fit: cover; object-position: center center;';
+}
+
+.object-fit-contain{
+	object-fit: contain;
+	object-position: center center;
+	font-family: 'object-fit: contain; object-position: center center;';
+}
+
+.text-center{
+	text-align: center;
+}
+
+.flex-auto{
+	flex: auto;
+}
+
+.text-uppercase{
+	text-transform: uppercase;
+}
+
+.nowrap{
+	white-space: nowrap;
+}
+
+.lg-visible, .lg-visible-flex{ display: none !important; }
+
+@media screen and (max-width: 1329px){
+	.lg-hidden{ display: none !important; }
+	.lg-visible{ display: block !important; }
+	.lg-visible-flex{ display: flex !important; }
+}
+
+.md-visible, .md-visible-flex{ display: none !important; }
+
+@media screen and (max-width: 991px){
+	.md-hidden{ display: none !important; }
+	.md-visible{ display: block !important; }
+	.md-visible-flex{ display: flex !important; }
+}
+
+.sm-visible, .sm-visible-flex{ display: none !important; }
+
+@media screen and (max-width: 767px){
+	.sm-hidden{ display: none !important; }
+	.sm-visible{ display: block !important; }
+	.sm-visible-flex{ display: flex !important; }
+}
+
+.xs-visible, .xs-visible-flex, .xs-visible-inline{ display: none !important; }
+
+@media screen and (max-width: 575px){
+	.xs-hidden{ display: none !important; }
+	.xs-visible{ display: block !important; }
+	.xs-visible-flex{ display: flex !important; }
+	.xs-visible-inline{ display: inline !important; }
+}
+
+.sub-xs-visible, .sub-xs-visible-flex{ display: none !important; }
+
+@media screen and (max-width: 575px){
+	.sub-xs-hidden{ display: none !important; }
+	.sub-xs-visible{ display: block !important; }
+	.sub-xs-visible-flex{ display: flex !important; }
+}
+
+@media screen and (max-width: 575px){
+	.xs-flex-right{
+		margin-left: auto;
+	}
+}
+
+a[href^="tel"]{
+	white-space: nowrap;
+}

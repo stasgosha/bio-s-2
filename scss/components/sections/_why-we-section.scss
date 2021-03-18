@@ -1,0 +1,227 @@
+.bg-white-to-gray{
+	background: linear-gradient(to bottom, transparent, #F8F9F3);
+}
+
+.why-we-section{
+	padding: 35px 0 100px;
+
+	.section-caption{
+		margin-bottom: 40px;
+	}
+
+	@media screen and (max-width: 575px){
+		padding: 10px 0 25px;
+
+		.section-caption{
+			margin-bottom: 30px;
+		}
+	}
+}
+
+.big-video-block{
+	width: 100%;
+	position: relative;
+	max-width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+
+	@media screen and (max-width: 1199px){
+		max-width: 90%;
+	}
+
+	@media screen and (min-width: 768px){
+		&:before,
+		&:after{
+			content: '';
+			display: block;
+			width: 172px;
+			height: 242px;
+			background: url(../img/decorations/leaves.png) no-repeat center center / contain;
+			bottom: -13px;
+			position: absolute;
+			pointer-events: none;
+		}
+
+		&:before{
+			left: -118px;
+		}
+
+		&:after{
+			right: -118px;
+			transform: scaleX(-1);
+		}
+	}
+
+	@media screen and (max-width: 767px){
+		max-width: 100%;
+	}
+
+	.block-video-container{
+		position: relative;
+		background: #ccc;
+		z-index: 2;
+	
+		&:before{
+			content: '';
+			display: block;
+			padding-top: 52.237%;
+
+			@media screen and (max-width: 575px){
+				padding-top: 89.65%;
+			}
+		}
+
+		.video-iframe,
+		video{
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			left: 0;
+			top: 0;
+		}
+	}
+
+	.block-content{
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		left: 0;
+		top: 0;
+		z-index: 3;
+		transition: all $t;
+
+		.block-preview{
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			left: 0;
+			top: 0;
+			object-fit: cover;
+			object-position: center center;
+		}
+
+		.play-btn{
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%);
+		}
+	}
+	
+	&.playing{
+		.block-content{
+			opacity: 0;
+			visibility: hidden;
+		}
+	}
+}
+
+.play-btn{
+	width: 132px;
+	height: 132px;
+	border-radius: 50%;
+	background: rgba(#E4DDDD, .66);
+	transition: all $t;
+
+	&:before{
+		content: '';
+		display: block;
+		width: 100px;
+		height: 100px;
+		border-radius: 50%;
+		background: #fff;
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+	}
+
+	&:after{
+		content: '';
+		display: block;
+		width: 50px;
+		height: 50px;
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+		background: url(../img/icons/play.svg) no-repeat center center / contain;
+	}
+
+	&:hover,
+	&:focus{
+		background: $primary;
+		outline: none;
+	}
+
+	&:not(.no-transform){
+		&:hover,
+		&:focus{
+			width: 150px;
+			height: 150px;
+		}
+	}
+
+	@media screen and (min-width: 992px){
+		&.small{
+			width: 95px;
+			height: 95px;
+
+			&:before{
+				width: 72px;
+				height: 72px;
+			}
+
+			&:after{
+				width: 34px;
+				height: 34px;
+			}
+		}
+	}
+
+	@media screen and (max-width: 991px){
+		width: 90px;
+		height: 90px;
+
+		&:before{
+			width: 75px;
+			height: 75px;
+		}
+
+		&:after{
+			width: 40px;
+			height: 40px;
+		}
+
+		&:not(.no-transform){
+			&:hover,
+			&:focus{
+				width: 120px;
+				height: 120px;
+			}
+		}
+	}
+
+	@media screen and (max-width: 575px){
+		width: 60px;
+		height: 60px;
+
+		&:before{
+			width: 45px;
+			height: 45px;
+		}
+
+		&:after{
+			width: 22px;
+			height: 22px;
+		}
+
+		&:not(.no-transform){
+			&:hover,
+			&:focus{
+				width: 80px;
+				height: 80px;
+			}
+		}
+	}
+}

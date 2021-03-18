@@ -1,0 +1,218 @@
+*,
+*:before,
+*:after{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body{
+	font-family: $main-font;
+	position: relative;
+	background: $body-bg;
+	background-attachment: fixed;
+
+	&.overflow{
+		overflow: hidden;
+	}
+
+	&.modal-visible{
+		overflow: hidden;
+		height: 100vh;
+	}
+
+	img{
+		max-width: unset;
+	}
+}
+
+ul, ol{
+	list-style: none;
+}
+
+button{
+	background: transparent;
+	border: 0;
+	cursor: pointer;
+	appearance: none;
+	font-family: inherit;
+	box-shadow: none;
+	border-radius: 0;
+	// outline: none !important;
+}
+
+a, button{
+	text-decoration: none;
+	transition: all $t;
+	// outline: none !important;
+	border: none;
+}
+
+a img{
+	// outline: none !important;
+	// border: none !important;
+}
+
+h1,h2,h3,h4,h5,h6{
+	margin: 0;
+}
+
+picture, iframe, figure{
+	display: block;
+}
+
+.wrapper{
+	min-height: 100vh;
+	position: relative;
+	overflow: hidden;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	padding-top: 0;
+
+	@media screen and (max-width: 991px){
+		padding-top: 150px;
+	}
+
+	@media screen and (max-width: 575px){
+		padding-top: 124px;
+	}
+
+	.page-content{
+		flex: auto;
+		position: relative;
+		z-index: 5;
+	}
+
+	.footer{
+		flex: none;
+	}
+}
+
+.container{
+	width: 100%;
+	padding: 0 15px;
+	margin: 0 auto;
+
+	@media screen and (min-width: 576px){
+		max-width: 555px;
+	}
+
+	@media screen and (min-width: 768px){
+		max-width: 740px;
+	}
+
+	@media screen and (min-width: 992px){
+		max-width: 950px;
+	}
+
+	@media screen and (min-width: 1200px){
+		max-width: 1200px;
+	}
+
+	@media screen and (min-width: 1330px){
+		max-width: 1320px;
+	}
+}
+
+.cards-list{
+	display: grid;
+	grid-gap: 30px;
+
+	@media screen and (max-width: 1199px){
+		grid-gap: 15px;
+	}
+
+	@for $i from 2 through 6 {
+		&.columns-#{$i} {
+			grid-template-columns: repeat(#{$i}, 1fr);
+		}
+	}
+
+	@media screen and (max-width: 1319px){
+		@for $i from 1 through 4 {
+			&.lg-columns-#{$i} {
+				grid-template-columns: repeat(#{$i}, 1fr);
+			}
+		}
+	}
+
+	@media screen and (max-width: 991px){
+		@for $i from 1 through 4 {
+			&.md-columns-#{$i} {
+				grid-template-columns: repeat(#{$i}, 1fr);
+			}
+		}
+	}
+
+	@media screen and (max-width: 767px){
+		@for $i from 1 through 3 {
+			&.sm-columns-#{$i} {
+				grid-template-columns: repeat(#{$i}, 1fr);
+			}
+		}
+	}
+
+	@media screen and (max-width: 575px){
+		@for $i from 1 through 3 {
+			&.xs-columns-#{$i} {
+				grid-template-columns: repeat(#{$i}, 1fr);
+			}
+		}
+	}
+}
+
+.visually-hidden{
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	border: 0;
+	padding: 0;
+	clip: rect(0 0 0 0);
+	overflow: hidden;
+}
+
+.scroll-next-btn{
+	width: 46px;
+	height: 46px;
+	border-radius: 50%;
+	background: linear-gradient(180deg, #FEFEFC 0%, #EEEEEE 100%);
+	border: 1px solid #E9E9E9;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 3;
+
+	.btn-icon{
+		fill: $primary;
+		width: 10px;
+		height: 10px;
+	}
+
+	&:hover,
+	&:focus{
+		outline: none;
+		border-color: $primary;
+	}
+
+	&.no-bg{
+		background: transparent;
+		border: 0;
+
+		.btn-icon{
+			fill: #fff;
+			transition: all $t;
+			display: block;
+			width: 20px;
+			height: 20px;
+		}
+
+		&:hover,
+		&:focus{
+			.btn-icon{
+				fill: $blue;
+			}
+		}
+	}
+}
