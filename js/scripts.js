@@ -101,6 +101,7 @@ document.addEventListener('DOMContentLoaded', function(){
 			rightArrowPosition = rightLimit;
 
 		let pointsPositions = {};
+		let pointsCoords = [];
 
 
 		let pointsRotateAngle = [50, 41, 34, 22, 11, 0, -4, -12, -18, -30, -45, -52];
@@ -109,6 +110,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
 		$(points).each(function(i, el){
 			pointsPositions[$(el).data('value')] = i;
+			pointsCoords.push( parseInt($(el).offset().left) );
 		});
 
 		leftArrow.css({
@@ -242,6 +244,51 @@ document.addEventListener('DOMContentLoaded', function(){
 			$(this).siblings('input').val( $(this).text() );
 		});
 
+		let pointerX;
+
+		$("body").bind("dragover", function(e){
+			pointerX = e.pageX;
+		});
+
+		$(cmp).find('.limit').on('drag', function(e){
+			let closestDot;
+
+			let closestDots = pointsCoords.filter(point => point <= pointerX + 20);
+
+			if ($(this).is('.left-limit')) {
+				leftLimit = closestDots.length - 1;
+
+				if (leftLimit >= rightLimit) {
+					leftLimit = rightLimit - 1;
+				}
+
+				if (leftLimit < 0) {
+					leftLimit = 0;
+				}
+
+				animateArrowMove('left', leftArrowPosition, leftLimit);
+			} else{
+				rightLimit = closestDots.length - 1;
+
+				if (rightLimit <= leftLimit) {
+					rightLimit = leftLimit + 1;
+				}
+
+				animateArrowMove('right', rightArrowPosition, rightLimit);
+			}
+
+			$('#range-from').val( pointsValues[leftLimit] );
+			$('#range-to').val( pointsValues[rightLimit] );
+
+			updateArc();
+		});
+
+		$(cmp).find('.limit').on("dragstart", function( event ) {
+			var img = new Image();
+			img.src = 'data:image/gif;base64,R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs=';
+			event.originalEvent.dataTransfer.setDragImage(img, 0, 0);
+		});
+
 		// Range Field
 		jcf.setOptions('Range', {});
 
@@ -255,6 +302,14 @@ document.addEventListener('DOMContentLoaded', function(){
 		});
 
 		updateArc();
+	});
+
+	$('[data-select-type]').click(function(e){
+		e.preventDefault();
+
+		let type = $(this).data('select-type');
+
+		$('.type-button.'+type).trigger('click');
 	});
 
 	// Fields
@@ -280,6 +335,10 @@ document.addEventListener('DOMContentLoaded', function(){
 		prevArrow: '<button type="button" class="slick-prev" aria-label="Предыдущий"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10"><path d="M.25 4.4L4.4.26a.84.84 0 011.18 1.19L2.03 5l3.56 3.57a.84.84 0 01-1.18 1.18L.25 5.6a.84.84 0 010-1.18zm5-.25L8.55.67a.82.82 0 011.2 0c.33.35.33.92 0 1.27l-2.7 2.85 2.7 2.85c.33.34.33.91 0 1.26a.82.82 0 01-1.2 0l-3.3-3.48a.93.93 0 010-1.27z" fill="#9CC155"/></svg></button>',
 		nextArrow: '<button type="button" class="slick-next" aria-label="Следующий"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10"><path d="M9.75 4.4L5.6.26a.84.84 0 00-1.18 1.19L7.97 5 4.41 8.57a.84.84 0 001.18 1.18L9.75 5.6a.84.84 0 000-1.18zm-5-.25L1.45.67a.82.82 0 00-1.2 0 .93.93 0 000 1.27l2.7 2.85-2.7 2.85a.93.93 0 000 1.26c.33.35.87.35 1.2 0l3.3-3.48a.93.93 0 000-1.27z" fill="#fff"/></svg></button>'
 	}
+
+	$('body').on('mouseup', '.slick-dots button', function(e){
+		$(this).trigger('click');
+	});
 
 	if ($(window).width() < 992) {
 		$('.bubbles-list').slick({
@@ -399,7 +458,7 @@ document.addEventListener('DOMContentLoaded', function(){
 			appendArrows: $(el).find('.slider-nav'),
 			appendDots: $(el).find('.slider-nav'),
 			infinite: true,
-			speed: 600,
+			speed: 300,
 			...arrowsButtons,
 			responsive: [
 				{

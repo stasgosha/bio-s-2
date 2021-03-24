@@ -16,6 +16,7 @@
 .find-component{
 	position: relative;
 	height: 290px;
+	user-select: none;
 
 	&:before{
 		content: '';
@@ -184,10 +185,14 @@
 
 		.limit{
 			pointer-events: auto;
-			cursor: pointer;
+			cursor: move !important;
 			position: absolute;
-			transition: all .05s linear;
+			transition: all .02s linear;
 			outline: none;
+
+			svg{
+				// pointer-events: none;
+			}
 		}
 
 		.points{
