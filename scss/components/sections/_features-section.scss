@@ -24,52 +24,30 @@
 }
 
 .features-list{
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-	width: calc(100% + 90px * 2);
-	margin-left: -90px;
-	margin-right: -90px;
-	
-	.item{
-		width: 33.33%;
-		padding: 0 90px;
-		display: flex;
-		justify-content: center;
+	display: grid;
+	grid-template-columns: repeat(5, 220px);
+	justify-content: space-between;
+	grid-gap: 46px;
 
-		@media screen and (min-width: 1200px){
-			&:nth-child(1){
-				justify-content: flex-start;
-			}
 
-			&:nth-child(3){
-				justify-content: flex-end;
-			}
-		}
+	@media screen and (max-width: 1199px){
+		grid-gap: 20px;
 	}
 
 	@media screen and (max-width: 1199px){
 		width: calc(100% + 20px * 2);
+		display: block;
 		margin-left: -20px;
 		margin-right: -20px;
-		
+
 		.item{
-			padding: 0 20px;
+			padding-left: 20px;
+			padding-right: 20px;
 		}
 	}
 
-	@media screen and (max-width: 991px){
-		width: calc(500px + 27px * 2);
-		margin-left: auto;
-		margin-right: auto;
-	}
-
-	@media screen and (max-width: 767px){
-		width: calc(400px + 27px * 2);
-	}
-
 	@media screen and (max-width: 575px){
-		width: calc(240px + 27px * 2);
+		// width: calc(240px + 27px * 2);
 
 		.slick-arrow{
 			width: 34px;
@@ -87,51 +65,66 @@
 }
 
 .feature-card{
-	width: 300px;
-	height: 300px;
-	border-radius: 50%;
-	position: relative;
-	background: url(../img/decorations/orange-circle.svg) no-repeat center center / contain;
-	padding: 90px 60px;
+	width: 220px;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 10px;
+	min-height: 210px;
 	display: flex;
-	align-items: center;
-	justify-content: center;
 	text-align: center;
 	color: $text-dark;
 	font-size: 16px;
 	line-height: 1.15;
+	box-shadow: 0px 8px 20px rgba(78, 127, 222, 0.2);
+	border-radius: 6px;
+	background: #fff;
 
-	.card-icon{
-		width: 80px;
-		height: 80px;
-		position: absolute;
-		left: 3px;
-		top: 10px;
-		border-radius: 50%;
-		background: linear-gradient(90deg, #E0E97C 0%, #A7DC52 100%);
-		border: 1px solid #E9E9E9;
+	.card-inner{
 		display: flex;
+		flex-direction: column;
 		align-items: center;
-		justify-content: center;
+		padding: 30px 12px 10px;
+		box-shadow: 0px 8px 20px rgba(78, 127, 222, 0.2);
+		border-radius: 6px;
+		background: #fff;
+		position: relative;
 
-		img{
-			max-height: 46px;
+		&:after{
+			content: '';
 			display: block;
-			width: auto;
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			left: 0;
+			top: 0;
+			background: url("data:image/svg+xml,%3Csvg fill='none' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 190'%3E%3Crect x='1.5' y='1.5' width='197' height='187' rx='4.5' fill='transparent' stroke='url(%23paint0_linear)' stroke-width='3'/%3E%3Cdefs%3E%3ClinearGradient id='paint0_linear' x1='95.38' y1='0' x2='95.38' y2='187.56' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23E9ECA5'/%3E%3Cstop offset='1' stop-color='%23A7DC52'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E") no-repeat center center / contain;
+			pointer-events: none;
+			transition: all .5s;
+			opacity: 0;
 		}
 	}
 
-	@media screen and (max-width: 575px){
-		width: 240px;
-		height: 240px;
-		padding: 50px;
-		font-size: 14px;
-		line-height: 18px;
+	&:hover,
+	&:focus{
+		.card-inner{
+			&:after{
+				opacity: 1;
+			}
+		}
+	}
 
-		.card-icon{
-			width: 64px;
-			height: 64px;
-			top: 8px;
+	.card-icon{
+		width: 46px;
+		height: 46px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin-bottom: 28px;
+
+		img{
+			max-height: 100%;
+			display: block;
+			width: auto;
 		}
 	}
 }

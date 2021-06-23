@@ -67,6 +67,107 @@ document.addEventListener('DOMContentLoaded', function(){
 		}
 	});
 
+	// how-we-work-component
+	$('.how-we-work-component').each(function(i, cmp){
+		const water = $(cmp).find('.cmp-bar');
+
+		let width = 1370;
+
+		$(cmp).find('.cmp-list li').on('mouseover', function(){
+			water.width( ($(this).data('width') + 40) / 1370 * 100 + '%' );
+		});
+	});
+
+	// purification-type-block
+	$('.purification-type-block').each(function(i, el){
+		$(window).scroll(function(){
+			if ($(window).scrollTop() + $(window).height() * 0.5 > $(el).offset().top) {
+				$(el).addClass('active');
+			}
+		});
+	});
+
+	// Quiz
+	$('.quiz-component').each(function(i, cmp){
+		let currentStep = 0;
+
+		const updateCurrentStep = () => {
+			$(cmp).attr('data-step', currentStep);
+			$(cmp).find('.steps-nav .current').text(currentStep);
+			$(cmp).find('.buttons-nav [data-step="'+currentStep+'"]').addClass('current').siblings().removeClass('current');
+
+			$(cmp).find('.cmp-steps-track').height( $(cmp).find('.cmp-step').eq(currentStep).outerHeight() );
+
+			if (currentStep == 5) {
+				$('.quiz-section .sc-subtitle').slideDown(300);
+			} else{
+				$('.quiz-section .sc-subtitle').slideUp(300);
+			}
+		}
+
+		updateCurrentStep();
+		cmp.style.setProperty('--current-step', currentStep);
+		$('.quiz-section .sc-subtitle').slideUp(300);
+
+		$(cmp).find('.js-next, .js-start').click(function(e){
+			e.preventDefault();
+
+			cmp.style.setProperty('--current-step', ++currentStep);
+
+			updateCurrentStep();
+		});
+
+		$(cmp).find('.js-prev').click(function(e){
+			e.preventDefault();
+
+			cmp.style.setProperty('--current-step', --currentStep);
+
+			updateCurrentStep();
+		});
+
+		$(cmp).find('.js-reset').click(function(e){
+			e.preventDefault();
+
+			currentStep = 0;
+			cmp.style.setProperty('--current-step', currentStep);
+
+			$(cmp).find('input[type="radio"]').prop('checked', false);
+			$(cmp).find('input[type="tel"]').val('');
+
+			updateCurrentStep();
+		});
+
+		$(cmp).find('[data-step]').click(function(e){
+			e.preventDefault();
+
+			currentStep = +$(this).data('step');
+
+			cmp.style.setProperty('--current-step', currentStep);
+
+			updateCurrentStep();
+		});
+	});
+
+	// Odometer
+	window.odometerOptions = {
+		auto: false,
+		selector: '.odometer',
+		format: '(ddd)',
+		duration: 1500,
+		theme: 'minimal',
+		animation: 'count'
+	};
+
+	$(window).scroll(function(){
+		var elem = $('.odometer');
+
+		elem.each(function(){
+			if ($(document).scrollTop() >= $(this).offset().top - $(window).height() * 0.8) {
+				$(this).html($(this).data('value'));
+			}
+		});
+	});
+
 	// Accordions
 	$('.accordion, .js-accordion').each(function(i, el){
 		$(el).find('> .ac-header, > .ac-header > .ac-opener').click(function(e){
@@ -340,18 +441,34 @@ document.addEventListener('DOMContentLoaded', function(){
 		$(this).trigger('click');
 	});
 
-	if ($(window).width() < 992) {
-		$('.bubbles-list').slick({
-			slidesToShow: 1,
+	if ($(window).width() < 1200){
+		$('.features-list').slick({
+			slidesToShow: 3,
 			slidesToScroll: 1,
 			arrows: true,
 			dots: false,
 			infinite: true,
 			speed: 600,
-			...arrowsButtons
+			...arrowsButtons,
+			responsive: [
+				{
+					breakpoint: 768,
+					settings: {
+						slidesToShow: 2
+					}
+				},
+				{
+					breakpoint: 576,
+					settings: {
+						slidesToShow: 1
+					}
+				}
+			]
 		});
+	}
 
-		$('.features-list').slick({
+	if ($(window).width() < 992) {
+		$('.bubbles-list').slick({
 			slidesToShow: 1,
 			slidesToScroll: 1,
 			arrows: true,

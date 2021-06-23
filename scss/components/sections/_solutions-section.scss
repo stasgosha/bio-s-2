@@ -1,7 +1,13 @@
 .solutions-section{
-	padding: 50px 0 30px;
-	margin-top: -250px;
-	background: linear-gradient(to bottom, #0E4D70 0%, #2B6F8B 300px, #F8F9F3 100%);
+	// padding: 50px 0 30px;
+	// margin-top: -250px;
+	// background: linear-gradient(to bottom, #0E4D70 0%, #2B6F8B 300px, #F8F9F3 100%);
+	background: url(../img/backgrounds/ground-bg.jpg) no-repeat center center / cover;
+	padding: 60px 0 135px;
+
+	@media screen and (min-width: 1025px){
+		background-attachment: fixed;
+	}
 
 	.section-caption{
 		margin-bottom: 30px;
@@ -11,9 +17,94 @@
 		}
 	}
 
+	.solution-type-select{
+		margin-bottom: 30px;
+	}
+
 	@media screen and (max-width: 991px){
 		background: transparent;
 		margin-top: 0;
+	}
+}
+
+.solution-type-select{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	.block-type-btn{
+		padding: 12px 30px;
+		border-radius: 24px;
+		display: block;
+		white-space: nowrap;
+		font-size: 18px;
+		line-height: 1.333;
+		font-family: $second-font;
+		font-weight: bold;
+		border-radius: 50px;
+		background: linear-gradient(0deg, #D9E7EA 0%, #F3F7F8 94.64%, #fff 100%);
+		box-shadow: 0px 2px 3px rgba(63, 63, 63, 0.35);
+		color: $text-light;
+
+		&:hover,
+		&:focus{
+			color: $text-color;
+		}
+
+		&.active{
+			color: #fff;
+			cursor: default;
+			background: linear-gradient(0deg, $primary 0%, $primary 94.64%, $primary 100%);
+		}
+	}
+
+	.switch{
+		margin-left: 16px;
+		margin-right: 16px;
+		position: relative;
+
+		.fake-label{
+			position: relative;
+			width: 77px;
+			height: 36px;
+			border-radius: 18px;
+			background: #EFF4F5;
+			border: 1px solid #FFFFFF;
+			box-shadow: inset 0px 0px 4px rgba(101, 117, 146, 0.76);
+			cursor: pointer;
+
+			&:before{
+				content: '';
+				display: block;
+				width: 36px;
+				height: 36px;
+				border-radius: 50%;
+				background: $blue;
+				border: 1px solid #FFF;
+				box-shadow: 3px 0px 6px rgba(63, 72, 90, 0.46);
+				position: absolute;
+				left: -1px;
+				top: -1px;
+				transition: all $t;
+			}
+		}
+
+		input:checked{
+			~ .fake-label{
+				&:before{
+					left: calc(100% - 36px);
+				}
+			}
+		}
+	}
+
+	@media screen and (max-width: 499px){
+		flex-direction: column;
+
+		.switch{
+			margin-top: 16px;
+			margin-bottom: 16px;
+		}
 	}
 }
 

@@ -6,12 +6,13 @@
 	<title>Главная | БИО-С</title>
 
 	<link rel="preconnect" href="https://fonts.gstatic.com">
-	<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;700;900&display=swap" rel="stylesheet">
 
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
 	<link rel="stylesheet" href="css/slick.min.css">
 	<link rel="stylesheet" href="css/slick-theme.min.css">
 	<link rel="stylesheet" href="css/jcf.css">
+	<link rel="stylesheet" href="css/odometer-theme-minimal.css">
 	<link rel="stylesheet" href="css/main.css">
 </head>
 <body class="home">
@@ -27,8 +28,11 @@
 							</a>
 						</div>
 						<div class="header-block header-right md-hidden">
-							<a href="tel:+74957218937" class="phone-link">+7 (495) 721-89-37</a>
-							<button class="btn btn-accent" data-modal="#callback-modal">Обратный звонок</button>
+							<div class="phone-wrapper">
+								<a href="tel:+74957218937" class="phone-link white">+7 (495) 721-89-37</a>
+								<p>Пн–Пт: 9-00 до 18-00 Сб–Вс: 10-00 до 17-00</p>
+							</div>
+							<button class="btn btn-accent btn-light header-callback-btn" data-modal="#callback-modal">Обратный звонок</button>
 						</div>
 					</div>
 				</div>
@@ -94,12 +98,33 @@
 								<small>до</small> 98%
 							</strong>
 						</h1>
-						
+
+						<div class="section-features">
+							<div class="item">
+								<div class="item-image">
+									<img src="img/big-icons/tools-2.svg" alt="">
+								</div>
+								<p class="item-text"><strong>Гарантия 3 года</strong> и сервисное обсуживание</p>
+							</div>
+							<div class="item">
+								<div class="item-image">
+									<img src="img/big-icons/stopwatch.svg" alt="">
+								</div>
+								<p class="item-text">Установка <br><strong>под ключ за 1 день</strong></p>
+							</div>
+							<div class="item">
+								<div class="item-image">
+									<img src="img/big-icons/ruler.svg" alt="">
+								</div>
+								<p class="item-text"><strong>Бесплатный выезд инженера</strong> замерщика</p>
+							</div>
+						</div>
+
 						<button class="play-btn small no-transform" data-video-type="youtube" data-video-modal="K5XRprbteF4" aria-label="Смотреть видео"></button>
 					</div>
 				</div>
 
-				<a href="#about-septics" class="scroll-next-btn no-bg">
+				<a href="#needs-to-know" class="scroll-next-btn no-bg">
 					<svg class="btn-icon">
 						<use xlink:href="img/icons-sprite.svg#arrows-down"></use>
 					</svg>
@@ -107,7 +132,7 @@
 			</section>
 
 			<div class="advantages-and-solutions">
-				<section class="advantages-section" id="about-septics">
+				<!-- <section class="advantages-section" id="about-septics">
 					<div class="container">
 						<div class="section-caption">
 							<h2 class="sc-title">Что вам нужно знать о современных септиках и автономных канализациях?</h2>
@@ -146,6 +171,48 @@
 							</div>
 						</div>
 					</div>
+				</section> -->
+
+				<section class="need-to-know-section" id="needs-to-know">
+					<div class="container">
+						<div class="section-caption text-center">
+							<h2 class="sc-title">Что вам нужно знать о современных септиках и автономных канализациях?</h2>
+						</div>
+
+						<div class="cards-list columns-4 lg-columns-2 sm-columns-1">
+							<div class="need-to-know-card">
+								<div class="card-image">
+									<img src="img/content-images/need-to-know/100.png" alt="">
+								</div>
+								<h3 class="card-caption"><strong>100% Переработка</strong> хозяйственных и бытовых отходов</h3>
+								<p>Сочетание компактности и эффективности</p>
+							</div>
+
+							<div class="need-to-know-card">
+								<div class="card-image">
+									<img src="img/content-images/need-to-know/tree.png" alt="">
+								</div>
+								<h3 class="card-caption">Бережный монтаж <strong>без вреда ландшафту</strong></h3>
+								<p>Сочетание компактности и эффективности</p>
+							</div>
+
+							<div class="need-to-know-card">
+								<div class="card-image">
+									<img src="img/content-images/need-to-know/septic.png" alt="">
+								</div>
+								<h3 class="card-caption"><strong>Отсутствие <br>запахов</strong> и полная герметичность </h3>
+								<p>Септик на участке не доставит вам никакого дискомфорта</p>
+							</div>
+
+							<div class="need-to-know-card">
+								<div class="card-image">
+									<img src="img/content-images/need-to-know/ground.png" alt="">
+								</div>
+								<h3 class="card-caption">Установка даже <br><strong>при высоком уровне грунтовых вод</strong></h3>
+								<p>Мы сможеи установить септик на любом участке</p>
+							</div>
+						</div>
+					</div>
 				</section>
 				
 				<section class="solutions-section">
@@ -154,8 +221,17 @@
 							<p class="sc-overline">Наши решения</p>
 							<h2 class="sc-title">Решения для вашего участка</h2>
 						</div>
-				
-						<div class="solution-block">
+
+						<div class="solution-type-select">
+							<button class="block-type-btn active">«Комфорт»</button>
+							<label class="switch">
+								<input type="checkbox" class="visually-hidden">
+								<div class="fake-label"></div>
+							</label>
+							<button class="block-type-btn">«Дачник»</button>
+						</div>
+
+						<!-- <div class="solution-block">
 							<div class="block-content">
 								<div class="block-content-inner">
 									<h3 class="block-caption"><small>Септик</small> «Дачник»</h3>
@@ -228,7 +304,7 @@
 									</div>
 								</div>
 							</div>
-						</div>
+						</div> -->
 				
 						<div class="solution-block inverted">
 							<div class="block-content">
@@ -318,7 +394,7 @@
 
 					<div class="container">
 						<div class="section-caption">
-							<h2 class="sc-title">Подбор септика</h2>
+							<h2 class="sc-title green">Подбор септика</h2>
 						</div>
 					</div>
 				</div>
@@ -329,9 +405,13 @@
 								<div class="layer-label">Степень очистки</div>
 							</div>
 							<div class="middle-layer">
-								<button class="type-button dacha active">60% Дачник</button>
-								<button class="type-button comfort">Комфорт 98%</button>
-								<input type="hidden" name="selectedType" value="60% Дачник">
+								<button class="type-button dacha active">
+									<span class="btn-text">Степень очистки <strong>60%</strong></span>
+								</button>
+								<button class="type-button comfort">
+									<span class="btn-text">Степень очистки <strong>98%</strong></span>
+								</button>
+								<input type="hidden" name="selectedType" value="60%">
 							</div>
 							<div class="bottom-layer">
 								<div class="layer-label">Укажите количество человек</div>
@@ -792,6 +872,373 @@
 				</div>
 			</section>
 
+			<section class="quiz-section">
+				<div class="container">
+					<div class="section-caption text-center">
+						<h2 class="sc-title">Подберите септик самостоятельно <strong>за 1 минуту!</strong></h2>
+						<p class="sc-subtitle hidden">Вам подходит следующий септик:</p>
+					</div>
+
+					<div class="quiz-component">
+						<div class="cmp-content">
+							<div class="cmp-nav">
+								<p class="steps-nav"><strong>Шаг <span class="current">0</span></strong> из <span class="total">4</span></p>
+
+								<div class="buttons-nav">
+									<button class="step-btn current hidden" data-step="0">Шаг 0</button>
+									<button class="step-btn" data-step="1">Шаг 1</button>
+									<button class="step-btn" data-step="2">Шаг 2</button>
+									<button class="step-btn" data-step="3">Шаг 3</button>
+									<button class="step-btn" data-step="4">Шаг 4</button>
+								</div>
+							</div>
+							<div class="cmp-steps">
+								<div class="cmp-steps-track">
+									<div class="cmp-step step-0">
+										<h3 class="cmp-caption">Ответьте на 4 простых вопроса и узнайте, какой септик вам подходит</h3>
+
+										<div class="cmp-man"></div>
+
+										<div class="cmp-btn">
+											<button class="btn js-start">
+												<span class="btn-text">Начать</span>
+												<svg class="btn-icon">
+													<use xlink:href="img/icons-sprite.svg#arrows-right"></use>
+												</svg>
+											</button>
+										</div>
+									</div>
+
+									<div class="cmp-step step-1">
+										<h3 class="cmp-caption"><strong>1.</strong> Где вы будете использовать септик?</h3>
+
+										<div class="step-answers">
+											<label class="answer-card">
+												<input type="radio" name="question-1" value="1" class="visually-hidden">
+												<div class="card-image">
+													<img src="img/content-images/quiz/1-1.png" alt="">
+												</div>
+												<div class="card-content">
+													<p class="card-option">Дача или загородный дом</p>
+													<p class="card-value"><strong>до 9 человек</strong></p>
+												</div>
+											</label>
+
+											<label class="answer-card">
+												<input type="radio" name="question-1" value="2" class="visually-hidden">
+												<div class="card-image">
+													<img src="img/content-images/quiz/1-2.png" alt="">
+												</div>
+												<div class="card-content">
+													<p class="card-option">Несколько дачных/загородных домохозяйств</p>
+													<p class="card-value"><strong>до 20 человек</strong></p>
+												</div>
+											</label>
+
+											<label class="answer-card">
+												<input type="radio" name="question-1" value="3" class="visually-hidden">
+												<div class="card-image">
+													<img src="img/content-images/quiz/1-3.png" alt="">
+												</div>
+												<div class="card-content">
+													<p class="card-option">Турбаза или небольшой жилой комплекс</p>
+													<p class="card-value"><strong>до 40 человек</strong></p>
+												</div>
+											</label>
+
+											<label class="answer-card">
+												<input type="radio" name="question-1" value="4" class="visually-hidden">
+												<div class="card-image">
+													<img src="img/content-images/quiz/1-4.png" alt="">
+												</div>
+												<div class="card-content">
+													<p class="card-option">Гостиница или коттеджный посёлок</p>
+													<p class="card-value"><strong>до 100 человек</strong></p>
+												</div>
+											</label>
+										</div>
+
+										<div class="cmp-footer">
+											<div class="cmp-btn">
+												<button class="btn js-next">
+													<span class="btn-text">Далее</span>
+													<svg class="btn-icon">
+														<use xlink:href="img/icons-sprite.svg#arrows-right"></use>
+													</svg>
+												</button>
+											</div>
+										</div>
+									</div>
+
+									<div class="cmp-step step-2">
+										<h3 class="cmp-caption"><strong>2.</strong> Сколько человек будут пользоваться септиком?</h3>
+
+										<div class="users-field">
+											<p>Введите значение до 20</p>
+											<input type="tel">
+											<svg class="field-icon">
+												<use xlink:href="img/icons-sprite.svg#person"></use>
+											</svg>
+										</div>
+
+										<div class="cmp-footer">
+											<button class="btn js-prev">
+												<svg class="btn-icon">
+													<use xlink:href="img/icons-sprite.svg#arrows-left"></use>
+												</svg>
+												<span class="btn-text">Назад</span>
+											</button>
+
+											<div class="cmp-btn">
+												<button class="btn js-next">
+													<span class="btn-text">Далее</span>
+													<svg class="btn-icon">
+														<use xlink:href="img/icons-sprite.svg#arrows-right"></use>
+													</svg>
+												</button>
+											</div>
+										</div>
+									</div>
+
+									<div class="cmp-step step-3">
+										<h3 class="cmp-caption"><strong>3.</strong> Какой тип почвы на вашем участке?</h3>
+
+										<div class="step-answers">
+											<label class="answer-card">
+												<input type="radio" name="question-3" value="1" class="visually-hidden">
+												<div class="card-image big-image">
+													<img src="img/content-images/quiz/3-1.jpg" alt="">
+												</div>
+												<div class="card-content">
+													<p class="card-option">Глина</p>
+												</div>
+											</label>
+
+											<label class="answer-card">
+												<input type="radio" name="question-3" value="2" class="visually-hidden">
+												<div class="card-image big-image">
+													<img src="img/content-images/quiz/3-2.jpg" alt="">
+												</div>
+												<div class="card-content">
+													<p class="card-option">Суглинок</p>
+												</div>
+											</label>
+
+											<label class="answer-card">
+												<input type="radio" name="question-3" value="3" class="visually-hidden">
+												<div class="card-image big-image">
+													<img src="img/content-images/quiz/3-3.jpg" alt="">
+												</div>
+												<div class="card-content">
+													<p class="card-option">Песок</p>
+												</div>
+											</label>
+
+											<label class="answer-card">
+												<input type="radio" name="question-3" value="4" class="visually-hidden">
+												<div class="card-image big-image no-image">
+													<img src="img/content-images/quiz/question.png" alt="">
+												</div>
+												<div class="card-content">
+													<p class="card-option">Другое/Не знаю</p>
+												</div>
+											</label>
+										</div>
+
+										<div class="cmp-footer">
+											<button class="btn js-prev">
+												<svg class="btn-icon">
+													<use xlink:href="img/icons-sprite.svg#arrows-left"></use>
+												</svg>
+												<span class="btn-text">Назад</span>
+											</button>
+
+											<div class="cmp-btn">
+												<button class="btn js-next">
+													<span class="btn-text">Далее</span>
+													<svg class="btn-icon">
+														<use xlink:href="img/icons-sprite.svg#arrows-right"></use>
+													</svg>
+												</button>
+											</div>
+										</div>
+									</div>
+
+									<div class="cmp-step step-4">
+										<h3 class="cmp-caption"><strong>4.</strong> Какой уровень грунтовых вод на вашем участке?</h3>
+
+										<div class="step-answers">
+											<label class="answer-card">
+												<input type="radio" name="question-4" value="1" class="visually-hidden">
+												<div class="card-image big-image">
+													<img src="img/content-images/quiz/4-1.jpg" alt="">
+												</div>
+												<div class="card-content">
+													<p class="card-option">Высокий</p>
+												</div>
+											</label>
+
+											<label class="answer-card">
+												<input type="radio" name="question-4" value="2" class="visually-hidden">
+												<div class="card-image big-image">
+													<img src="img/content-images/quiz/4-2.jpg" alt="">
+												</div>
+												<div class="card-content">
+													<p class="card-option">Низкий</p>
+												</div>
+											</label>
+
+											<label class="answer-card">
+												<input type="radio" name="question-4" value="3" class="visually-hidden">
+												<div class="card-image big-image no-image">
+													<img src="img/content-images/quiz/question.png" alt="">
+												</div>
+												<div class="card-content">
+													<p class="card-option">Другое/Не знаю</p>
+												</div>
+											</label>
+										</div>
+
+										<div class="cmp-footer">
+											<button class="btn js-prev">
+												<svg class="btn-icon">
+													<use xlink:href="img/icons-sprite.svg#arrows-left"></use>
+												</svg>
+												<span class="btn-text">Назад</span>
+											</button>
+
+											<div class="cmp-btn">
+												<button class="btn js-next">
+													<span class="btn-text">Далее</span>
+													<svg class="btn-icon">
+														<use xlink:href="img/icons-sprite.svg#arrows-right"></use>
+													</svg>
+												</button>
+											</div>
+										</div>
+									</div>
+
+									<div class="cmp-step step-5">
+										<div class="cmp-result-block">
+											<div class="block-top">
+												<div class="block-image">
+													<img src="img/content-images/product-big-image.jpg" alt="">
+												</div>
+												<div class="block-content">
+													<h3 class="block-caption">Автономная канализация БИО-С Комфорт 3 с принудительным водоотведением</h3>
+
+													<h4 class="block-subcaption">Характеристики</h4>
+													<ul class="info-list bigger">
+														<li>
+															<div class="item-label">Кол-во пользователей:</div>
+															<div class="item-value">10-12 человека</div>
+														</li>
+														<li>
+															<div class="item-label">Производительность:</div>
+															<div class="item-value">до 2500 л/сутки</div>
+														</li>
+														<li>
+															<div class="item-label">Залповый сброс, л:</div>
+															<div class="item-value">до 800</div>
+														</li>
+														<li>
+															<div class="item-label">Энергопотребление, Вт: </div>
+															<div class="item-value">80</div>
+														</li>
+														<li>
+															<div class="item-label">Высота, м:</div>
+															<div class="item-value">2.40</div>
+														</li>
+														<li>
+															<div class="item-label">Диаметр, м:</div>
+															<div class="item-value">1.70</div>
+														</li>
+														<li>
+															<div class="item-label">Масса, кг:</div>
+															<div class="item-value">320</div>
+														</li>
+														<li>
+															<div class="item-label">Отведение воды:</div>
+															<div class="item-value">самотечная</div>
+														</li>
+													</ul>
+
+													<div class="block-info">
+														<p class="block-price">Цена: <strong>144 000</strong> руб.</p>
+														<p class="block-price with-installation"><span class="green">Цена с монтажом:</span> <strong>144 000</strong> руб.</p>
+
+														<div class="block-about">
+															<button class="about-opener">Что входит в монтаж?</button>
+															<div class="about-text">
+																<h4 class="block-subcaption">Монтаж</h4>
+																<p>В монтаж «БИО-С Комфорт» по АКЦИИ включены следующие работы и материалы:</p>
+
+																<ul>
+																	<li>Копка котлована под систему «БИО-С Комфорт» (тип грунта: песок, суглинок, глина).</li>
+																	<li>Монтаж 4 п.м. трубопровода канализации (от ундамента  до точки сброса).</li>
+																	<li>10 м электрокабеля ВВГ 3×1,5 и закладка его в трубу ПНД.</li>
+																	<li>Отвал грунта в 5-ти метровой зоне от котлована.</li>
+																	<li>Монтаж системы в котлован.</li>
+																	<li>Обсыпка системы песком и одновременное заполнение  водой.</li>
+																	<li>Наличие песка (предоставляемого Заказчиком) не дальше 10-ти метров от котлована.</li>
+																	<li>Подключение системы к электрическому кабелю.</li>
+																	<li>Установка и подключение компрессора в систему.</li>
+																	<li>Установка и подключение насоса (для систем с принудительным выбросом).</li>
+																	<li>Запуск системы, регулировочные работы.</li>
+																</ul>
+															</div>
+														</div>
+													</div>
+
+													<div class="block-top-footer">
+														<button class="btn">Заказать</button>
+													</div>
+												</div>
+											</div>
+
+											<div class="block-advantages">
+												<h3 class="block-caption">Преимущества этого септика:</h3>
+
+												<div class="block-advantages-list">
+													<div class="item">
+														<div class="item-image">
+															<img src="img/content-images/quiz/advantage-1.png" alt="">
+														</div>
+														<p class="item-text">Очистка воды 98%. Вода прозрачная и без запаха</p>
+													</div>
+													<div class="item">
+														<div class="item-image">
+															<img src="img/content-images/quiz/advantage-2.png" alt="">
+														</div>
+														<p class="item-text">Очищенную воду можно использовать для полива</p>
+													</div>
+													<div class="item">
+														<div class="item-image">
+															<img src="img/content-images/quiz/advantage-3.png" alt="">
+														</div>
+														<p class="item-text">Не гниёт и не подвержен коррозии</p>
+													</div>
+													<div class="item">
+														<div class="item-image">
+															<img src="img/content-images/quiz/advantage-4.png" alt="">
+														</div>
+														<p class="item-text">Подходит для любого типа грунта</p>
+													</div>
+												</div>
+											</div>
+
+											<div class="block-footer">
+												<button class="btn btn-light js-reset">Пройти тест заново</button>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
 			<section class="help-section">
 				<div class="container">
 					<div class="section-content">
@@ -819,6 +1266,9 @@
 						<div class="purification-type-block">
 							<div class="block-video">
 								<img src="img/content-images/60-percents.jpg" alt="">
+								<div class="block-percents">
+									<span class="odometer" data-value="60">0</span>%
+								</div>
 							</div>
 							<div class="block-content">
 								<h3 class="block-caption">«Дачник»</h3>
@@ -833,6 +1283,9 @@
 						<div class="purification-type-block inverted">
 							<div class="block-video">
 								<img src="img/content-images/98-percents.jpg" alt="">
+								<div class="block-percents">
+									<span class="odometer" data-value="98">0</span>%
+								</div>
 							</div>
 							<div class="block-content">
 								<h3 class="block-caption">«Комфорт»</h3>
@@ -1163,42 +1616,52 @@
 					<div class="features-list orange-next">
 						<div class="item">
 							<div class="feature-card">
-								<div class="card-icon">
-									<img src="img/big-icons/tank.svg" alt="">
+								<div class="card-inner">
+									<div class="card-icon">
+										<img src="img/big-icons/tank.svg" alt="">
+									</div>
+									<div class="card-text"><strong>Более 1000</strong> септиков уже установлено</div>
 								</div>
-								<div class="card-text"><strong>Более 1000</strong> септиков уже установлено</div>
 							</div>
 						</div>
 						<div class="item">
 							<div class="feature-card">
-								<div class="card-icon">
-									<img src="img/big-icons/ruler.svg" alt="">
+								<div class="card-inner">
+									<div class="card-icon">
+										<img src="img/big-icons/ruler.svg" alt="">
+									</div>
+									<div class="card-text"><strong>Бесплатный выезд инженера</strong> замерщика</div>
 								</div>
-								<div class="card-text"><strong>Бесплатный выезд инженера</strong> замерщика</div>
 							</div>
 						</div>
 						<div class="item">
 							<div class="feature-card">
-								<div class="card-icon">
-									<img src="img/big-icons/stopwatch.svg" alt="">
+								<div class="card-inner">
+									<div class="card-icon">
+										<img src="img/big-icons/stopwatch.svg" alt="">
+									</div>
+									<div class="card-text">Установка <strong>под ключ за 1 день</strong></div>
 								</div>
-								<div class="card-text">Установка <strong>под ключ за 1 день</strong></div>
 							</div>
 						</div>
 						<div class="item">
 							<div class="feature-card">
-								<div class="card-icon">
-									<img src="img/big-icons/headset.svg" alt="">
+								<div class="card-inner">
+									<div class="card-icon">
+										<img src="img/big-icons/headset.svg" alt="">
+									</div>
+									<div class="card-text"><strong>Бесплатная консультация</strong> <br>по подбору септика</div>
 								</div>
-								<div class="card-text"><strong>Бесплатная консультация</strong> по подбору септика под ваши нужды и бюджет</div>
 							</div>
 						</div>
 						<div class="item">
 							<div class="feature-card">
-								<div class="card-icon">
-									<img src="img/big-icons/tools.svg" alt="">
+								<div class="card-inner">
+									<div class="card-icon">
+										<img src="img/big-icons/tools.svg" alt="">
+									</div>
+									<div class="card-text"><strong>Гарантия 3 года</strong> и сервисное обсуживание</div>
 								</div>
-								<div class="card-text"><strong>Гарантия 3 года</strong> и сервисное обсуживание</div>
 							</div>
 						</div>
 					</div>
@@ -1217,53 +1680,67 @@
 						<div class="section-caption">
 							<h2 class="sc-title brown">Как мы работаем</h2>
 						</div>
-				
-						<div class="section-inner">
-							<div class="section-content">
-								<ol class="how-we-work-list">
-									<li>Обратитесь к нам по телефону <a href="tel:+74957218937">+7 (495) 721-89-37</a> или через форму на сайте</li>
-									<li>Мы проконсультируем вас по всем вопросам и поможем подобрать септик</li>
-									<li>Наш инженер приедет и сделает все необходимые замеры на участке бесплатно</li>
-									<li>Обсуждаем и утверждаем финальный заказ</li>
-									<li>Изготовление септика на производстве</li>
-									<li>Монтаж и проведение пуско-наладочных работ в вашем присутствии</li>
-								</ol>
-				
-								<div class="small-features-list md-hidden">
-									<div class="item">
-										<div class="item-icon">
-											<img src="img/big-icons/shield.svg" alt="">
-										</div>
-										<div class="item-text"><strong>Ремонт по гарантии</strong> <br>(при необходимости)</div>
-									</div>
-									<div class="item">
-										<div class="item-icon">
-											<img src="img/big-icons/tools-green.svg" alt="">
-										</div>
-										<div class="item-text"><strong>Сервисное обслуживание</strong><br> 1 раз в 1-2 года</div>
-									</div>
-								</div>
-							</div>
-							<div class="section-sidebar">
-								<img src="img/content-images/render.png" alt="" class="sidebar-image">
-				
-								<div class="small-features-list md-visible-flex">
-									<div class="item">
-										<div class="item-icon">
-											<img src="img/big-icons/shield.svg" alt="">
-										</div>
-										<div class="item-text"><strong>Ремонт по гарантии</strong> <br>(при необходимости)</div>
-									</div>
-									<div class="item">
-										<div class="item-icon">
-											<img src="img/big-icons/tools-green.svg" alt="">
-										</div>
-										<div class="item-text"><strong>Сервисное обслуживание</strong><br> 1 раз в 1-2 года</div>
-									</div>
-								</div>
 
-								<button class="btn btn-orange">Оставить заявку</button>
+						<div class="how-we-work-component">
+							<div class="cmp-scale">
+								<div class="cmp-bar"></div>
 							</div>
+							<ol class="cmp-list">
+								<li data-width="49">
+									<div class="item-text">
+										Обратитесь к нам по телефону <a href="tel:+74957218937">+7 (495) 721-89-37</a> или через форму на сайте
+									</div>
+								</li>
+								<li data-width="215">
+									<div class="item-text">
+										Мы проконсультируем вас по всем вопросам и поможем подобрать септик
+									</div>
+								</li>
+								<li data-width="379">
+									<div class="item-text">
+										Наш инженер приедет и сделает все необходимые <strong>замеры на участке бесплатно</strong>
+									</div>
+								</li>
+								<li data-width="544">
+									<div class="item-text">
+										Обсуждаем и утверждаем финальный заказ
+									</div>
+								</li>
+								<li data-width="709">
+									<div class="item-text">
+										Изготовление септика на производстве
+									</div>
+								</li>
+								<li data-width="874">
+									<div class="item-text">
+										Монтаж и проведение пуско-наладочных работ в вашем присутствии
+									</div>
+								</li>
+								<li data-width="1039">
+									<div class="item-text">
+										Ваш септик готов к эксплуатации
+									</div>
+								</li>
+							</ol>
+						</div>
+
+						<div class="section-footer">
+							<div class="small-features-list">
+								<div class="item">
+									<div class="item-icon">
+										<img src="img/big-icons/shield.svg" alt="">
+									</div>
+									<div class="item-text"><strong>Ремонт по гарантии</strong> <br>(при необходимости)</div>
+								</div>
+								<div class="item">
+									<div class="item-icon">
+										<img src="img/big-icons/tools-green.svg" alt="">
+									</div>
+									<div class="item-text"><strong>Сервисное обслуживание</strong><br> 1 раз в 1-2 года</div>
+								</div>
+							</div>
+
+							<button class="btn">Оставить заявку</button>
 						</div>
 					</div>
 				</section>
@@ -1609,6 +2086,7 @@
 	<script src="js/slick.min.js"></script>
 	<script src="js/jcf.js"></script>
 	<script src="js/jcf.range.js"></script>
+	<script src="js/odometer.min.js"></script>
 	<script src="//www.youtube.com/iframe_api"></script>
 	<!-- <script src="js/wow.min.js"></script> -->
 	<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>

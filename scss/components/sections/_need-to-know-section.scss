@@ -1,0 +1,81 @@
+.need-to-know-section{
+	padding: 80px 0 135px;
+	background: #EFF6D0;
+
+	.section-caption{
+		max-width: 710px;
+		margin-left: auto;
+		margin-right: auto;
+		margin-bottom: 40px;
+	}
+}
+
+.need-to-know-card{
+	min-height: 390px;
+	width: 300px;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 32px 32px 57px 20px;
+	position: relative;
+
+	background: #FFFFFF;
+	box-shadow: 0px 8px 20px rgba(78, 127, 222, 0.2);
+	border-radius: 6px;
+
+	@media screen and (min-width: 768px){
+		&:nth-child(even){
+			transform: translateY(50px);
+		}
+	}
+
+	&:after{
+		content: '';
+		display: block;
+		position: absolute;
+		top: 28px;
+		left: 40px;
+		background: url("data:image/svg+xml,%3Csvg fill='none' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 339'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M8 51V8h224v323H8v-10H0v12a6 6 0 006 6h228a6 6 0 006-6V6a6 6 0 00-6-6H6a6 6 0 00-6 6v45h8z' fill='url(%23paint0_linear)'/%3E%3Cdefs%3E%3ClinearGradient id='paint0_linear' x1='114.46' y1='0' x2='114.46' y2='334.65' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23E9ECA5'/%3E%3Cstop offset='1' stop-color='%23A7DC52'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E") no-repeat center center / contain;
+		width: 240px;
+		height: 339px;
+	}
+
+	.card-image{
+		width: 206px;
+		height: 173px;
+		display: flex;
+		align-items: flex-end;
+		margin-left: -9px;
+		position: relative;
+		z-index: 2;
+
+		img{
+			max-width: 100%;
+			max-height: 100%;
+			display: block;
+		}
+	}
+
+	.card-caption{
+		font-family: $second-font;
+		font-size: 16px;
+		line-height: 1.5;
+		font-weight: 300;
+		margin-bottom: 10px;
+		color: #0D5667;
+		position: relative;
+		z-index: 2;
+
+		strong{
+			font-weight: 900;
+			font-size: 19px;
+		}
+	}
+
+	p{
+		font-size: 15px;
+		line-height: 1.5;
+		color: #657492;
+		position: relative;
+		z-index: 2;
+	}
+}

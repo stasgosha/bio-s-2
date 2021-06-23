@@ -21,7 +21,7 @@
 .big-video-block{
 	width: 100%;
 	position: relative;
-	max-width: 80%;
+	max-width: 1296px;
 	margin-left: auto;
 	margin-right: auto;
 
@@ -64,7 +64,7 @@
 		&:before{
 			content: '';
 			display: block;
-			padding-top: 52.237%;
+			padding-top: 56.25%;
 
 			@media screen and (max-width: 575px){
 				padding-top: 89.65%;

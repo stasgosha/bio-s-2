@@ -37,6 +37,17 @@
 		height: auto;
 	}
 
+	.section-footer{
+		margin-top: 67px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
+		.btn{
+			margin-top: 40px;
+		}
+	}
+
 	@media screen and (max-width: 1199px){
 		.section-inner{
 			grid-template-columns: 1fr 300px;
@@ -161,6 +172,10 @@
 		grid-gap: 10px;
 		align-items: center;
 		padding: 3px 0;
+
+		&:last-child{
+			margin-right: 0;
+		}
 	}
 
 	.item-icon{
@@ -216,6 +231,198 @@
 				font-size: 14px;
 				line-height: 18px;
 			}
+		}
+	}
+}
+
+.how-we-work-component{
+	position: relative;
+
+	.cmp-scale{
+		width: 1382px;
+		height: 102px;
+		margin-left: -46px;
+		margin-right: -46px;
+		position: relative;
+		z-index: 2;
+
+		&:after{
+			content: '';
+			display: block;
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			left: 0;
+			top: 0;
+			background: url(../img/content-images/scale.svg) no-repeat center center / contain;
+			z-index: 2;
+			pointer-events: none;
+		}
+
+		.cmp-bar{
+			width: 300px;
+			height: 70px;
+			position: absolute;
+			left: 6px;
+			top: 16px;
+			display: flex;
+			transition: all .5s;
+
+			&:before{
+				content: '';
+				display: block;
+				flex: auto;
+				background: #25787F;
+			}
+
+			&:after{
+				content: '';
+				display: block;
+				width: 134px;
+				flex: none;
+				background: url(../img/content-images/water-level.png) no-repeat center center / contain;
+			}
+		}
+	}
+
+	.cmp-list{
+		counter-reset: ol;
+
+		li{
+			counter-increment: ol;
+			display: flex;
+			flex-direction: column;
+			color: $text-dark;
+			font-size: 16px;
+			line-height: 1.5;
+
+			&:after{
+				content: '0'counter(ol);
+				font-size: 50px;
+				line-height: 1;
+				color: $primary;
+				margin-top: 20px;
+				font-family: $second-font;
+				font-weight: bold;
+			}
+
+			a{
+				color: inherit;
+				font-weight: bold;
+
+				&:hover,
+				&:focus{
+					color: $primary;
+				}
+			}
+		}
+	}
+
+	@media screen and (min-width: 1330px){
+		padding: 183px 0 189px;
+
+		.cmp-list{
+			position: absolute;
+			left: 30px;
+			top: 0;
+
+			li{
+				width: 270px;
+				position: absolute;
+				top: 0;
+				min-height: 199px;
+
+				&:before{
+					content: '';
+					display: block;
+					width: 19px;
+					height: 199px;
+					background: url("data:image/svg+xml,%3Csvg fill='none' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 19 199'%3E%3Cpath stroke='%2397BA56' stroke-width='2' stroke-dasharray='3 3' d='M10 14v185'/%3E%3Ccircle cx='9.5' cy='9.5' r='9.5' fill='%23fff'/%3E%3Ccircle cx='9.5' cy='9.5' r='4.5' fill='%239CC155'/%3E%3C/svg%3E") no-repeat center center / contain;
+					position: absolute;
+					left: -30px;
+					top: 0;
+				}
+
+				.item-text{
+					min-height: 72px;
+				}
+
+				&:nth-child(1){
+					left: calc(165px * 0);
+				}
+
+				&:nth-child(2){
+					left: calc(165px * 1);
+				}
+
+				&:nth-child(3){
+					left: calc(165px * 2);
+				}
+
+				&:nth-child(4){
+					left: calc(165px * 3);
+				}
+
+				&:nth-child(5){
+					left: calc(165px * 4);
+				}
+
+				&:nth-child(6){
+					left: calc(165px * 5);
+				}
+
+				&:nth-child(7){
+					left: calc(165px * 6);
+				}
+
+				&:nth-child(even){
+					top: 273px;
+					flex-direction: column-reverse;
+
+					&:before{
+						transform: scaleY(-1);
+						top: auto;
+						bottom: 0;
+					}
+
+					&:after{
+						margin-top: 0;
+						margin-bottom: 20px;
+					}
+				}
+			}
+		}
+	}
+
+	@media screen and (max-width: 1329px){
+		.cmp-scale{
+			display: none;
+		}
+
+		.cmp-list{
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			grid-gap: 30px;
+
+			li{
+				&:after{
+					order: -1;
+					margin-top: 0;
+					margin-bottom: 20px;
+				}
+			}
+		}
+	}
+
+	@media screen and (max-width: 767px){
+		.cmp-list{
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+
+	@media screen and (max-width: 479px){
+		.cmp-list{
+			grid-template-columns: repeat(1, 1fr);
 		}
 	}
 }

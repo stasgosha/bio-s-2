@@ -52,6 +52,21 @@
 		white-space: nowrap;
 	}
 
+	.phone-wrapper{
+		color: rgba(#fff, .75);
+		font-size: 10px;
+		font-weight: 500;
+		letter-spacing: -0.02em;
+		text-align: right;
+
+		.phone-link{
+			&:hover,
+			&:focus{
+				color: $primary;
+			}
+		}
+	}
+
 	@media screen and (max-width: 991px){
 		background: #fff;
 
@@ -72,7 +87,7 @@
 	align-items: center;
 	font-size: 14px;
 	line-height: 18px;
-	color: $text-light;
+	color: #fff;
 
 	.block-image{
 		flex: none;
@@ -220,5 +235,17 @@
 		.container{
 			padding: 0;
 		}
+	}
+}
+
+.header .btn.header-callback-btn{
+	color: #fff;
+	border-color: #E1FFA8;
+	border-width: 3px;
+
+	&:hover,
+	&:focus{
+		background: #E1FFA8;
+		color: $text-dark;
 	}
 }
