@@ -64,6 +64,40 @@
 				transform: rotate(0deg);
 			}
 		}
+
+		.cmp-bubble{
+			position: absolute;
+			left: 61.126%;
+			top: 1%;
+			width: 29.859%;
+			height: 46.031%;
+			transform-origin: 0% 98%;
+			animation: bubble 1.5s infinite linear both;
+			background: url(../img/content-images/buble.svg) no-repeat center center / contain;
+			z-index: 3;
+		}
+
+		@keyframes bubble{
+			0%{
+				transform: rotate(0deg);
+			}
+
+			25%{
+				transform: rotate(-4deg);
+			}
+
+			50%{
+				transform: rotate(0deg);
+			}
+
+			75%{
+				transform: rotate(4deg);
+			}
+
+			100%{
+				transform: rotate(0deg);
+			}
+		}
 		
 		&:before{
 			content: '';
@@ -222,6 +256,22 @@
 				margin-left: auto;
 				margin-right: auto;
 				transform: translateX(7.6%);
+			}
+		}
+
+		&.step-5{
+			opacity: 0;
+			transform: translateY(30px);
+			transition: all $t;
+			transition-delay: .6s;
+		}
+	}
+
+	&[data-step="5"]{
+		.cmp-step{
+			&.step-5{
+				opacity: 1;
+				transform: translateY(0);
 			}
 		}
 	}
@@ -663,6 +713,7 @@
 
 		.step-answers{
 			grid-template-columns: repeat(1, 1fr);
+			grid-gap: 16px;
 		}
 
 		.cmp-result-block{
@@ -671,9 +722,43 @@
 			}
 		}
 
+		.cmp-step{
+			min-height: 510px;
+		}
+
 		.cmp-footer{
+			margin-top: auto;
+
 			.cmp-btn{
 				width: 130px;
+			}
+		}
+
+		.answer-card{
+			display: flex;
+			align-items: center;
+
+			.card-image{
+				min-height: unset;
+				width: 90px;
+				height: 70px;
+				padding: 10px;
+				margin-right: 16px;
+				flex: none;
+				margin-bottom: 0;
+
+				img{
+					max-width: 100%;
+					max-height: 100%;
+				}
+			}
+
+			.card-content{
+				text-align: left;
+
+				.card-option{
+					min-height: unset;
+				}
 			}
 		}
 	}

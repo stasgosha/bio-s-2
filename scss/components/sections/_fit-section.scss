@@ -67,18 +67,28 @@
 	align-items: center;
 	height: 100%;
 
+	&:before,
 	&:after{
 		content: '';
 		display: block;
 		width: calc(100% - 20px);
-		height: calc(100% - 20px);
-		border-radius: 3px;
+		height: calc(50% - 20px);
 		position: absolute;
 		left: 50%;
 		top: 50%;
 		transform: translate(-50%, -50%);
-		border: 1px solid #F1B32C;
 		pointer-events: none;
+		background: url("data:image/svg+xml,%3Csvg fill='none' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 270 290'%3E%3Cmask id='path-1-inside-1' fill='%23fff'%3E%3Crect width='270' height='290' rx='3'/%3E%3C/mask%3E%3Crect width='270' height='290' rx='3' stroke='url(%23paint0_linear)' stroke-width='12' mask='url(%23path-1-inside-1)'/%3E%3Cdefs%3E%3ClinearGradient id='paint0_linear' x1='141' y1='0' x2='141' y2='290' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23FFEF9A'/%3E%3Cstop offset='1' stop-color='%23E7C16F'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E") no-repeat center top / 100% auto;
+	}
+
+	&:before{
+		z-index: 2;
+		transform: translate(-50%, -100%);
+	}
+
+	&:after{
+		transform: translate(-50%, 0);
+		background-position: center bottom;
 	}
 
 	.card-image{

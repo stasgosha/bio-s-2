@@ -75,7 +75,28 @@ document.addEventListener('DOMContentLoaded', function(){
 
 		$(cmp).find('.cmp-list li').on('mouseover', function(){
 			water.width( ($(this).data('width') + 40) / 1370 * 100 + '%' );
+
+			$(this).addClass('current').siblings().removeClass('current');
 		});
+
+		if ($(window).width() < 768) {
+			$(cmp).find('.cmp-list').slick({
+				slidesToShow: 2,
+				slidesToScroll: 1,
+				arrows: false,
+				dots: true,
+				infinite: false,
+				speed: 600,
+				responsive: [
+					{
+						breakpoint: 460,
+						settings: {
+							slidesToShow: 1
+						}
+					}
+				]
+			});
+		}
 	});
 
 	// purification-type-block
@@ -91,12 +112,20 @@ document.addEventListener('DOMContentLoaded', function(){
 	$('.quiz-component').each(function(i, cmp){
 		let currentStep = 0;
 
+		$(cmp).find('.cmp-steps-track').height( $(cmp).find('.cmp-step').eq(0).outerHeight() );
+
 		const updateCurrentStep = () => {
 			$(cmp).attr('data-step', currentStep);
 			$(cmp).find('.steps-nav .current').text(currentStep);
 			$(cmp).find('.buttons-nav [data-step="'+currentStep+'"]').addClass('current').siblings().removeClass('current');
 
-			$(cmp).find('.cmp-steps-track').height( $(cmp).find('.cmp-step').eq(currentStep).outerHeight() );
+			if ($(window).width() >= 480) {
+				$(cmp).find('.cmp-steps-track').height( $(cmp).find('.cmp-step').eq(currentStep).outerHeight() );
+			} else{
+				if (currentStep == 5) {
+					$(cmp).find('.cmp-steps-track').height( $(cmp).find('.cmp-step').eq(currentStep).outerHeight() );
+				}
+			}
 
 			if (currentStep == 5) {
 				$('.quiz-section .sc-subtitle').slideDown(300);
@@ -565,6 +594,19 @@ document.addEventListener('DOMContentLoaded', function(){
 			appendArrows: $(el)
 		});
 	});
+
+	if ($(window).width() < 1330) {
+		$('.need-to-know-slider').slick({
+			slidesToShow: 3,
+			slidesToScroll: 1,
+			arrows: false,
+			dots: true,
+			infinite: true,
+			speed: 600
+		});
+
+		equalSlideHeight($('.need-to-know-slider'));
+	}
 
 	$('.products-slider-wrapper').each(function(i, el){
 		$(el).find('.products-slider').slick({

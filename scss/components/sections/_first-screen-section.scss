@@ -138,9 +138,27 @@
 			}
 		}
 	}
+
+	.play-btn{
+		@media screen and (min-width: 1200px){
+			width: 152px;
+			height: 152px;
+
+			&:before{
+				width: 115px;
+				height: 115px;
+			}
+		}
+	}
 }
 
 .page-caption{
 	@include h1;
 	color: #fff;
+
+	strong{
+		margin-top: .2em;
+		display: block;
+		color: #A1D332;
+	}
 }
